@@ -10,17 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download repository
+      - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Show project files
-        run: |
-          echo "CURRENT DIRECTORY:"
-          pwd
-          echo "ROOT FILES:"
-          ls -la
-          echo "GRADLE WRAPPER FILES:"
-          find . -maxdepth 4 -type f ( -name "gradlew" -o -name "gradlew.bat" -o -name "gradle-wrapper.jar" -o -name "gradle-wrapper.properties" ) -print
 
       - name: Set up Java 17
         uses: actions/setup-java@v4
