@@ -222,11 +222,11 @@ private fun TrackListScreen(
                     contentAlignment = Alignment.Center
                 ) {
                     Text(
-                        text = "Музыка не найдена.
+    text = "Музыка не найдена.
 Проверьте разрешения и нажмите «Сканировать» в меню.",
-                        style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f)
-                    )
+    style = MaterialTheme.typography.bodyMedium,
+    color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.6f)
+)
                 }
             }
         }
