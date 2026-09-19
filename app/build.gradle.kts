@@ -2,7 +2,6 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
-    id("org.jetbrains.kotlin.plugin.compose")
 }
 
 android {
@@ -13,6 +12,7 @@ android {
         applicationId = "com.example.temp"
         minSdk = 26
         targetSdk = 34
+
         versionCode = 1
         versionName = "1.0.0"
 
@@ -48,7 +48,7 @@ android {
         buildConfig = true
     }
 
-composeOptions {
+    composeOptions {
         kotlinCompilerExtensionVersion = "1.5.4"
     }
 
@@ -60,7 +60,7 @@ composeOptions {
 }
 
 dependencies {
-    // Android base
+    // Android
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
@@ -75,33 +75,33 @@ dependencies {
     implementation(libs.androidx.material.icons.extended)
     implementation(libs.androidx.navigation.compose)
 
-    // Images
+    // Загрузка обложек
     implementation(libs.coil.compose)
 
-    // Music playback: AndroidX Media3 / ExoPlayer
+    // Воспроизведение аудио: Media3 / ExoPlayer
     implementation(libs.androidx.media3.common)
     implementation(libs.androidx.media3.exoplayer)
     implementation(libs.androidx.media3.session)
 
-    // Local database: Room
+    // Локальная БД: Room
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
-    // Application settings: DataStore
+    // Настройки: DataStore
     implementation(libs.androidx.datastore.preferences)
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.core)
 
-    // Local unit tests
+    // Unit-тесты
     testImplementation("junit:junit:4.13.2")
 
-    // Instrumentation tests
+    // Инструментальные тесты
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-    // Debug-only Compose tools
+    // Инструменты предварительного просмотра Compose
     debugImplementation(libs.androidx.ui.tooling)
 }
