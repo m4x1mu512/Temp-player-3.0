@@ -46,12 +46,12 @@ class MainActivity : ComponentActivity() {
             val uiState by settingsRepository.uiState.collectAsState()
             
             TempTheme(
-                darkTheme = when (uiState.themeMode) {
-                    ThemeMode.SYSTEM -> false, // Упрощённо, можно добавить определение системной темы
-                    ThemeMode.LIGHT -> false,
-                    ThemeMode.DARK -> true
-                }
-            ) {
+    darkTheme = when (uiState.themeMode) {
+        ThemeMode.SYSTEM -> false
+        ThemeMode.LIGHT -> false
+        ThemeMode.DARK -> true
+    }
+) {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
